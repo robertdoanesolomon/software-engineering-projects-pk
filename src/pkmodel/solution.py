@@ -1,8 +1,8 @@
 import numpy as np
 import matplotlib.pylab as plt
-import model
+import pkmodel.model as model
 
-def visualise(modeldata):
+def visualise(modeldata, file_name):
     time=np.linspace(0,1,1000)
     fig, ax = plt.subplots()
     # Plot q_c
@@ -18,9 +18,9 @@ def visualise(modeldata):
     plt.legend()
     ax.set_ylabel('drug mass (ng)')
     ax.set_xlabel('time [h]')
-    plt.savefig('plot_vis.png')
+    plt.savefig(file_name)
     #plt.show()
 
-parameters=[1,2,3,4,5,6]
-test0 = model.SC(parameters=parameters)
-result=visualise(model.SC.integrate(test0))
+# parameters=[1,2,3,4,5,6]
+# test0 = model.SC(parameters=parameters)
+# result=visualise(model.SC.integrate(test0))

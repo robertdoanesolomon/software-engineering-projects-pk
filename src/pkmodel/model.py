@@ -45,7 +45,7 @@ parameters = [0.7, 1, 2, 3, 4]
 test0 = IV(parameters=parameters)
 test1 = test0.integrate()
 #test1=IV.integrate()
-print('test1',test1.shape)
+# print('test1',test1.shape)
 
 ############INTEGRATION OUTSIDE THE CLASS
 # # Create an instance of the IV class
@@ -104,7 +104,7 @@ parameters = [0.7, 1, 2, 3, 4,6]
 test0 = SC(parameters=parameters)
 test1 = test0.integrate()
 #test1=IV.integrate()
-print('test1',test1.shape)
+# print('test1',test1.shape)
 
 ############INTEGRATION OUTSIDE THE CLASS
 # # Create an instance of the IV class
