@@ -14,4 +14,3 @@ class Solution:
     """
     def __init__(self, value=44):
         self.value = value
-
