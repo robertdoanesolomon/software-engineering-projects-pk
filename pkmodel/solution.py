@@ -18,9 +18,10 @@ def visualise(modeldata):
     plt.legend()
     ax.set_ylabel('drug mass (ng)')
     ax.set_xlabel('time [h]')
-    plt.savefig('plot_vis.png')
-    #plt.show()
+    #plt.savefig('plot.png')
+    plt.show()
 
-parameters=[1,2,3,4,5,6]
-test0 = model.SC(parameters=parameters)
-result=visualise(model.SC.integrate(test0))
+parameter=[1,2,3,4,5]
+
+result=visualise(model.IV.integrate())
+print(result)
