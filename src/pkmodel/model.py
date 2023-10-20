@@ -17,7 +17,8 @@ class Model:
 
     """
     def __init__(self, value=42):
-        self.value = value   
+        self.value = value
+        #return(value)
 
 class IV(Model):
     # Your class definition here
