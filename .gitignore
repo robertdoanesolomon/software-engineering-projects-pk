@@ -6,6 +6,9 @@ __pycache__/
 # vim
 .vim/
 
+# file outputs
+*.png
+
 # C extensions
 *.so
 
