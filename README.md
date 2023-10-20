@@ -65,7 +65,9 @@ params = [1, 1, 1, 1, 1]
 model_to_use = pkmodel.model.IV(parameters=params)
 
 # Integrate the model to obtain solution
-# The output of model_to_use.integrate() is a numpy array of dimension (2, 1000) where 1000 is the number of time steps, and 3 is the number of compartments in the order [q_c, q_p1, q_0]
+# The output of model_to_use.integrate() is a numpy array of dimension
+# (2, 1000) where 1000 is the number of time steps, and 3 is the number of
+# compartments in the order [q_c, q_p1, q_0]
 solution = model_to_use.integrate()
 
 # Visualise the solution and save to file
@@ -82,7 +84,9 @@ params = [1, 1, 1, 1, 1, 1]
 model_to_use = pkmodel.model.SC(parameters=params)
 
 # Integrate the model to obtain solution
-# The output of model_to_use.integrate() is a numpy array of dimension (3, 1000) where 1000 is the number of time steps, and 3 is the number of compartments in the order [q_c, q_p1]
+# The output of model_to_use.integrate() is a numpy array of dimension
+# (3, 1000) where 1000 is the number of time steps, and 3 is the number of
+# compartments in the order [q_c, q_p1]
 solution = model_to_use.integrate()
 
 # Visualise the solution and save to file
