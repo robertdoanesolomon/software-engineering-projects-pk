@@ -62,7 +62,7 @@ import pkmodel
 params = [1, 1, 1, 1, 1]
 
 # Initalise the model with the parameters
-model_to_use = pkmodel.model.IV(parameters=params)
+model_to_use = pkmodel.model.IV(parametersIV=params)
 
 # Integrate the model to obtain solution
 # The output of model_to_use.integrate() is a numpy array of dimension
@@ -81,7 +81,7 @@ pkmodel.solution.visualise(solution, 'figure_IV.png')
 params = [1, 1, 1, 1, 1, 1]
 
 # Initalise the model with the parameters
-model_to_use = pkmodel.model.SC(parameters=params)
+model_to_use = pkmodel.model.SC(parametersSC=params)
 
 # Integrate the model to obtain solution
 # The output of model_to_use.integrate() is a numpy array of dimension
