@@ -31,6 +31,14 @@ $$
 
 
 ## Installation of Model
+### Installing package for general use
+1. Setup virtual environment:
+    1. `python3 -m venv venv` Setup virtual environment
+    2. `source venv/bin/activate` Activate virtual environment
+2. Install package:
+    1. `pip install --index-url https://test.pypi.org/simple --extra-index-url https://pypi.org/simple pkmodel-NERC1` Install package from Test PyPi.
+
+### Installing the package for development
 1. Download package from GitHub:
     1. `git clone git@github.com:robertdoanesolomon/software-engineering-projects-pk.git`
     2. `cd software-engineering-projects-pk`
