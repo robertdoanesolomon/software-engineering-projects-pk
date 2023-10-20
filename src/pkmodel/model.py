@@ -17,17 +17,20 @@ class Model:
 
     """
     def __init__(self, value=42):
-        self.value = value   
+        self.value = value
+        #return(value)
 
 class IV(Model):
     # Your class definition here
-    def __init__(self, parameters=[0, 0, 0, 0, 0]):
+    def __init__(self, parametersIV=[0, 0, 0, 0, 0]):
         super().__init__()
-        self.parameters = parameters
+        self.parametersIV = parametersIV
 
-    def paramIV(self, y, t):
-        Q_p1, V_c, V_p1, CL, X = self.parameters
-        q_c, q_p1 = y
+    def paramIV(self, y, t=None):
+        [Q_p1, V_c, V_p1, CL, X] = parametersIV
+        q_c=y[0]
+        q_p1=y[1]
+        #q_c, q_p1 = y
         transition = Q_p1 * (q_c / V_c - q_p1 / V_p1)
         dqc_dt = X - q_c / V_c * CL - transition
         dqp1_dt = transition
@@ -41,11 +44,11 @@ class IV(Model):
         return np.array([q_c,q_p1])
 
 ###########TESTING IF CLASS WORKS
-parameters = [0.7, 1, 2, 3, 4]
-test0 = IV(parameters=parameters)
+parametersIV = [0.7, 1, 2, 3, 4]
+test0 = IV(parametersIV=parametersIV)
 test1 = test0.integrate()
 #test1=IV.integrate()
-# print('test1',test1.shape)
+#print('test1',test1.shape)
 
 ############INTEGRATION OUTSIDE THE CLASS
 # # Create an instance of the IV class
@@ -76,13 +79,15 @@ test1 = test0.integrate()
 
 class SC(Model):
     "subcutaneous model"
-    def __init__(self, parameters=[0, 0, 0, 0, 0,0]):
+    def __init__(self, parametersSC=[0, 0, 0, 0, 0,0]):
         super().__init__()
-        self.parameters = parameters
+        self.parametersSC = parametersSC
 
-    def paramSC(self, y, t):
-        Q_p1, V_c, V_p1, CL, X, ka = self.parameters
-        q_c, q_p1, q_0= y
+    def paramSC(self, y, t=None):
+        [Q_p1, V_c, V_p1, CL, X, ka] = parametersSC
+        q_c=y[0]
+        q_p1=y[1]
+        q_0= y[2]
         dq0_dt = X - ka*q_0
         transition = Q_p1 * (q_c / V_c - q_p1 / V_p1)
         dqc_dt = ka*q_0 - q_c / V_c * CL - transition
@@ -100,11 +105,11 @@ class SC(Model):
 
 
 ############TESTING IF CLASS WORKS
-parameters = [0.7, 1, 2, 3, 4,6]
-test0 = SC(parameters=parameters)
+parametersSC = [0.7, 1, 2, 3, 4,6]
+test0 = SC(parametersSC=parametersSC)
 test1 = test0.integrate()
 #test1=IV.integrate()
-# print('test1',test1.shape)
+print('test1',test1.shape)
 
 ############INTEGRATION OUTSIDE THE CLASS
 # # Create an instance of the IV class
