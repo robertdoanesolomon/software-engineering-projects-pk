@@ -7,8 +7,8 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'NERC Group 1 Project'
-copyright = '2023, Tristram Walsh, Rhiannon Ackland, Robert Doane-Solomon, Sixtine Dromigny, Sarah Bull'
-author = 'Tristram Walsh, Rhiannon Ackland, Robert Doane-Solomon, Sixtine Dromigny, Sarah Bull'
+copyright = '2023, Sarah Bull, Sixtine Dromigny, Tristram Walsh, Rhiannon Ackland, Robert Doane-Solomon'
+author = 'Sarah Bull, Sixtine Dromigny, Tristram Walsh, Rhiannon Ackland, Robert Doane-Solomon'
 release = '1.0'
 
 # -- General configuration ---------------------------------------------------
