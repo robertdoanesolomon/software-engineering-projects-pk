@@ -1,6 +1,8 @@
 import unittest
 import pkmodel as pk
 import numpy as np
+from pkmodel.model import Model, IV, SC
+
 
 class ModelTest(unittest.TestCase):
         """
@@ -10,9 +12,9 @@ class ModelTest(unittest.TestCase):
                 """
                 Tests model creation
                 """
-                model = pk.Model()
+                model = Model
                 self.assertEqual(model.value, 42)
-                self.assertIsInstance(model, pk.Model, 'Error initiated wrong class')
+                self.assertIsInstance(model, Model, 'Error initiated wrong class')
                 
         
                 
@@ -21,14 +23,14 @@ class ModelTest(unittest.TestCase):
                 """
                 Tests output of IV function
                 """
-                model = pk.Model
-                t = np.array(0, 1, 1000)
+                model = IV
+                t = np.linspace(0, 1, 1000)
                 y = np.array([1, 1]) 
                 
-                self.parameters = [2, 2, 4, 2, 1]
+                self.parametersIV = [2, 2, 4, 2, 1]
         
  
-                output = model.paramIV(y, t)
+                output = model.paramIV(self, y,t)
 
                 self.assertEqual(output[1], 0.5)
                 self.assertEqual(output[0], 0.5)
@@ -40,12 +42,12 @@ class ModelTest(unittest.TestCase):
                 """
                 Tests output of SC function
                 """
-                model = pk.Model
-                self.parameters = [2, 2, 4, 2, 1, 2]
-                y = [1, 1, 1]
-                t = np.array(0, 1, 1000)
+                model = SC
+                self.parametersSC = [2, 2, 4, 2, 1, 2]
+                y = np.array([1, 1, 1])
+                t = np.linspace(0, 1, 1000)
                 
-                output = model.paramSC(y, t)
+                output = model.paramSC(self,y, t)
                 
                 self.assertEqual(output[0], 0.5)
                 self.assertEqual(output[1], 0.5)
